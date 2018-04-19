@@ -29,3 +29,8 @@ img.large {
 .line-through {
   text-decoration: line-through;
 }
+
+.reveal section img {
+  background: 0;
+  border: 0;
+}
