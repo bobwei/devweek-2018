@@ -1,0 +1,139 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="assets/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="assets/reveal.js/css/theme/night.css">
+  <link rel="stylesheet" href="assets/reveal.js/lib/css/zenburn.css">
+  <link rel="stylesheet" href="assets/flexboxgrid.min.css" type="text/css" >
+  <link rel="stylesheet" href="custom.css" type="text/css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-background="#fff">
+				<img
+          src="assets/ramda-github.png"
+          style="max-height: 45vh; box-shadow: 0 5px 50px 0 rgba(39,21,102,0.15), 0 1px 0 0 rgba(39,21,102,0.07);border-radius: .3125rem;"
+        />
+        <h3 style="color: #000; margin-top: 20px; margin-bottom: 10px;">
+          Ramda
+        </h3>
+        <h4 style="color: rgba(132,135,141,0.6);">
+          Practical functional Javascript
+        </h4>
+      </section>
+      <section>
+        <h2>R.evolve</h2>
+        <p>
+          A transformation functions that transforms object recursively according to input transformation object
+        </p>
+        <pre>
+          <code data-trim data-noescape class="language-js">
+const user = {
+  favoriteRepos: ['ramda', 'react', 'nodejs'],
+};
+const transforms = {
+  favoriteRepos: R.join(', '),
+};
+const result = R.evolve(transforms, user);
+
+/*
+{
+  favoriteRepos: 'ramda, react, nodejs',
+}
+*/
+          </code>
+          <h4 style="text-align: center;">
+            It works well with object. But why not working well with array too ?
+          </h4>
+        </pre>
+      </section>
+      <section data-background="#fff">
+        <img
+          src="assets/pr.png"
+          style="max-height: 50vh; box-shadow: 0 5px 50px 0 rgba(39,21,102,0.15), 0 1px 0 0 rgba(39,21,102,0.07);border-radius: .3125rem;"
+        />
+        <p>
+          <ul>
+            <li>
+              <a href="https://github.com/ramda/ramda/issues/2289" target="_blank">
+                Issue
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ramda/ramda/pull/2511" target="_blank">
+                Pull Request
+              </a>
+            </li>
+          </ul>
+        </p>
+      </section>
+    </div>
+  </div>
+  <script src="assets/reveal.js/lib/js/head.min.js"></script>
+  <script src="assets/reveal.js/js/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      slideNumber: 'c/t',
+      history: true,
+      dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        {
+          src: 'assets/reveal.js/lib/js/classList.js',
+          condition: function() {
+            return !document.body.classList;
+          },
+        },
+
+        // Interpret Markdown in <section> elements
+        {
+          src: 'assets/reveal.js/plugin/markdown/marked.js',
+          condition: function() {
+            return !!document.querySelector('[data-markdown]');
+          },
+        },
+        {
+          src: 'assets/reveal.js/plugin/markdown/markdown.js',
+          condition: function() {
+            return !!document.querySelector('[data-markdown]');
+          },
+        },
+
+        // Syntax highlight for <code data-trim data-noescape class="language-js"> elements
+        {
+          src: 'assets/reveal.js/plugin/highlight/highlight.js',
+          async: true,
+          callback: function() {
+            hljs.initHighlightingOnLoad();
+          },
+        },
+
+        // Zoom in and out with Alt+click
+        {
+          src: 'assets/reveal.js/plugin/zoom-js/zoom.js',
+          async: true,
+        },
+
+        // Speaker notes
+        {
+          src: 'assets/reveal.js/plugin/notes/notes.js',
+          async: true,
+        },
+      ],
+    });
+  </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72851924-2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('config', 'YOUR_GA');
+</script>
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>
