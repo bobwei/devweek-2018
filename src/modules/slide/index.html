@@ -23,6 +23,32 @@
           Practical functional Javascript
         </h4>
       </section>
+      <section>
+        <h2>R.evolve</h2>
+        <p>
+          A transformation functions that transforms object recursively according to input transformation object
+        </p>
+        <pre>
+          <code data-trim data-noescape class="language-js">
+const user = {
+  favoriteRepos: ['ramda', 'react', 'nodejs'],
+};
+const transforms = {
+  favoriteRepos: R.join(', '),
+};
+const result = R.evolve(transforms, user);
+
+/*
+{
+  favoriteRepos: 'ramda, react, nodejs',
+}
+*/
+          </code>
+          <h4 style="text-align: center;">
+            It works well with object. But why not working well with array too ?
+          </h4>
+        </pre>
+      </section>
     </div>
   </div>
   <script src="assets/reveal.js/lib/js/head.min.js"></script>
